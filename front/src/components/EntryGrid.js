@@ -9,8 +9,11 @@ import EntryCard from "./EntryCard";
 function getSectionSummary(title) {
   const summaries = {
     Research: "Research collaborations, technical themes, and work that informs how I build.",
+    Work: "Professional experience across product, engineering, and applied technical work.",
     "Work Experience": "Professional experience across product, engineering, and applied technical work.",
+    Teaching: "Teaching and support roles centered on making technical material more approachable.",
     "Teaching Experience": "Teaching and support roles centered on making technical material more approachable.",
+    "Extra curricular": "Leadership, community, and student programs outside of core project work.",
     Extracurricular: "Leadership, community, and student programs outside of core project work.",
   };
   return summaries[title];
