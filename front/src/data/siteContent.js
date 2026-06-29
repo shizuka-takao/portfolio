@@ -236,6 +236,7 @@ export const siteContent = {
       title: "University of California, Irvine",
       subtitle: "BS in Computer Science",
       period: "Sep 2024 - Present",
+      contextLines: ["Intelligent Systems Specialization", "GPA: 3.98"],
       summary:
         "Studying computer science with a growing focus on AI, perception, systems, and building tools that connect research ideas to practical use.",
       highlights: [
@@ -248,6 +249,7 @@ export const siteContent = {
       title: "Diablo Valley College",
       subtitle: "AS in Computer Science and Mathematics",
       period: "Jan 2022 - May 2024",
+      contextLines: ["GPA: 4.00"],
       summary:
         "Built a strong foundation in mathematics and programming through a transfer pathway grounded in careful problem solving and consistency.",
       highlights: [

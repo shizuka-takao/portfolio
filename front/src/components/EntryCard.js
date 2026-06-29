@@ -35,10 +35,18 @@ function EntryHighlights({ highlights }) {
 }
 
 /**
+ * Returns the context lines shown under an entry title
+ */
+function getContextLines(item) {
+  if (item.contextLines) return item.contextLines;
+  return [item.institution, item.advisor].filter(Boolean);
+}
+
+/**
  * Renders the extra context lines for one entry
  */
 function EntryContext({ item }) {
-  const lines = [item.institution, item.advisor].filter(Boolean);
+  const lines = getContextLines(item);
   if (lines.length === 0) return null;
   return (
     <div className="entry-context">
