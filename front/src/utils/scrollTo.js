@@ -1,9 +1,10 @@
-export const scrollToSection = (id) => {
+/**
+ * Scrolls to a section while accounting for the fixed nav
+ */
+export const scrollToSection = (event, id) => {
+  event.preventDefault();
   const element = document.getElementById(id);
-  if (element) {
-    window.scrollTo({
-      top: element.offsetTop,
-      behavior: "smooth",
-    });
-  }
+  const topOffset = element ? element.offsetTop - 88 : 0;
+  if (!element) return;
+  window.scrollTo({ top: topOffset, behavior: "smooth" });
 };

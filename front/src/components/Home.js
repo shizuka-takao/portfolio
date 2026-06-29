@@ -1,64 +1,90 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import HeroSection from "./HeroSection";
+import ProjectGrid from "./ProjectGrid";
+import EntryGrid from "./EntryGrid";
+import PageFooter from "./PageFooter";
+import { siteContent } from "../data/siteContent";
 import "../stylings/Home.css";
-import Introduction from "./Introduction";
-import About from "./About";
-import Portfolio from "./Portfolio";
-import Experience from "./Experience";
-import Contact from "./Contact";
-export default function Home() {
+
+/**
+ * Returns the section id that matches the current route
+ */
+function getSectionIdFromPathname(pathname) {
+  const sectionMap = {
+    "/research": "research",
+    "/work": "work",
+    "/teaching": "teaching",
+    "/selected-projects": "projects",
+    "/activities": "activities",
+  };
+  return sectionMap[pathname];
+}
+
+/**
+ * Scrolls to the matching section when the route changes
+ */
+function useSectionScroll() {
+  const location = useLocation();
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["intro", "about", "experience", "portfolio"];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+    const sectionId = getSectionIdFromPathname(location.pathname);
+    if (!sectionId) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const element = document.getElementById(sectionId);
+    const topOffset = element ? element.offsetTop - 88 : 0;
+    if (!element) return;
+    window.scrollTo({ top: topOffset, behavior: "smooth" });
+  }, [location.pathname]);
+}
 
-      // Remove all active classes
-      document.body.classList.remove(
-        "intro-active",
-        "about-active",
-        "experience-active",
-        "portfolio-active"
-      );
+/**
+ * Returns the experience sections shown above projects
+ */
+function getHomeSections() {
+  return {
+    primary: [
+      { id: "research", title: "Research", items: siteContent.research },
+      { id: "work", title: "Work Experience", items: siteContent.workExperience },
+      { id: "teaching", title: "Teaching Experience", items: siteContent.teachingExperience },
+    ],
+    extracurricular: {
+      id: "activities",
+      title: "Extracurricular",
+      items: siteContent.extracurricular,
+    },
+  };
+}
 
-      // Find current section
-      let currentSection = "intro";
-      sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const elementBottom = elementTop + rect.height;
+/**
+ * Renders one shared experience section
+ */
+function ExperienceSection({ section }) {
+  return <EntryGrid id={section.id} title={section.title} items={section.items} />;
+}
 
-          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-            currentSection = section;
-          }
-        }
-      });
-
-      // Add active class for current section
-      document.body.classList.add(`${currentSection}-active`);
-    };
-
-    // Initial call
-    handleScroll();
-
-    // Add scroll listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+/**
+ * Renders the full portfolio page
+ */
+export default function Home() {
+  useSectionScroll();
+  const sections = getHomeSections();
   return (
-    <>
+    <main className="site-shell">
       <Navbar />
-      <Introduction />
-      <About />
-      <Experience />
-      <Portfolio />
-      <Contact />
-    </>
+      <HeroSection hero={siteContent.hero} />
+      {sections.primary.map((section) => (
+        <ExperienceSection key={section.id} section={section} />
+      ))}
+      <ProjectGrid
+        projects={siteContent.selectedProjects}
+        footerLink={siteContent.allProjectsLink}
+      />
+      <ExperienceSection section={sections.extracurricular} />
+      <PageFooter footer={siteContent.footer} />
+    </main>
   );
 }

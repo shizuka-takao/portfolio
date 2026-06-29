@@ -1,23 +1,48 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import AboutPage from "./components/AboutPage";
+import AllProjectsPage from "./components/AllProjectsPage";
+import ArtsPage from "./components/ArtsPage";
+import BlogPage from "./components/BlogPage";
 import Home from "./components/Home";
 
-function App() {
-  console.log(process.env.REACT_APP_API_KEY);
+/**
+ * Renders the pages available in the portfolio
+ */
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/research" element={<Home />} />
+      <Route path="/work" element={<Home />} />
+      <Route path="/teaching" element={<Home />} />
+      <Route path="/selected-projects" element={<Home />} />
+      <Route path="/activities" element={<Home />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/arts" element={<ArtsPage />} />
+      <Route path="/projects" element={<AllProjectsPage />} />
+    </Routes>
+  );
+}
 
+/**
+ * Renders the root app for the portfolio
+ */
+function App() {
   return (
     <HelmetProvider>
-      <Helmet>
-        <title>Shizuka Takao - Personal Website</title>
-        <meta
-          name="description"
-          content="Explore Shizuka Takao's personal website. Shizuka is an aspiring software engineer currently learning machine learning and backend development."
-        />
-      </Helmet>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <HashRouter>
+        <Helmet>
+          <title>Shizuka Takao - Personal Website</title>
+          <meta
+            name="description"
+            content="Explore Shizuka Takao's portfolio featuring research, work experience, teaching, selected projects, and personal background."
+          />
+        </Helmet>
+        <AppRoutes />
+      </HashRouter>
     </HelmetProvider>
   );
 }
