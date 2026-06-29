@@ -277,7 +277,7 @@ export const siteContent = {
   allProjects,
   allProjectsLink: {
     label: "View All Projects",
-    href: "/#/projects",
+    href: "/projects",
     isExternal: false,
   },
   extracurricular: [
@@ -355,14 +355,14 @@ export const siteContent = {
  * Stores the links used in the sticky navigation
  */
 export const navigationItems = [
-  { id: "top", label: "Home", href: "/#/" },
-  { label: "About Me", href: "/#/about" },
-  { id: "research", label: "Research", href: "/#/research" },
-  { id: "work", label: "Work", href: "/#/work" },
-  { id: "teaching", label: "Teaching", href: "/#/teaching" },
-  { id: "projects", label: "Projects", href: "/#/selected-projects" },
-  { id: "activities", label: "Extracurricular", href: "/#/activities" },
-  { label: "All Projects", href: "/#/projects" },
-  { label: "Blog", href: "/#/blog" },
-  { label: "Arts", href: "/#/arts" },
+  { id: "top", label: "Home", href: "/#top" },
+  { label: "About Me", href: "/about" },
+  { id: "research", label: "Research", href: "/#research" },
+  { id: "work", label: "Work", href: "/#work" },
+  { id: "teaching", label: "Teaching", href: "/#teaching" },
+  { id: "projects", label: "Projects", href: "/#projects" },
+  { id: "activities", label: "Extracurricular", href: "/#activities" },
+  { label: "All Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
+  { label: "Arts", href: "/arts" },
 ];

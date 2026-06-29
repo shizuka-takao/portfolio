@@ -1,13 +1,29 @@
 import React from "react";
 import { navigationItems } from "../data/siteContent";
 import "../stylings/Navbar.css";
+import { scrollToSection } from "../utils/scrollTo";
+
+/**
+ * Returns true when the user is on the homepage
+ */
+function isHomePage() {
+  return window.location.pathname === "/";
+}
+
+/**
+ * Handles a section style navigation click
+ */
+function handleSectionClick(event, item) {
+  if (!isHomePage() || !item.id) return;
+  scrollToSection(event, item.id);
+}
 
 /**
  * Renders the portfolio brand
  */
 function NavBrand() {
   return (
-    <a className="nav-brand" href="/#/">
+    <a className="nav-brand" href="/#top" onClick={(event) => handleSectionClick(event, { id: "top" })}>
       <span className="brand-mark">ST</span>
       <span className="brand-name">Shizuka Takao</span>
     </a>
@@ -18,7 +34,11 @@ function NavBrand() {
  * Builds one navigation link
  */
 function NavigationLink({ item }) {
-  return <a href={item.href}>{item.label}</a>;
+  return (
+    <a href={item.href} onClick={(event) => handleSectionClick(event, item)}>
+      {item.label}
+    </a>
+  );
 }
 
 /**

@@ -1,6 +1,6 @@
 import React from "react";
 import { HelmetProvider, Helmet } from "react-helmet-async";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutPage from "./components/AboutPage";
 import AllProjectsPage from "./components/AllProjectsPage";
 import ArtsPage from "./components/ArtsPage";
@@ -14,11 +14,6 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/research" element={<Home />} />
-      <Route path="/work" element={<Home />} />
-      <Route path="/teaching" element={<Home />} />
-      <Route path="/selected-projects" element={<Home />} />
-      <Route path="/activities" element={<Home />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/arts" element={<ArtsPage />} />
@@ -33,7 +28,7 @@ function AppRoutes() {
 function App() {
   return (
     <HelmetProvider>
-      <HashRouter>
+      <BrowserRouter>
         <Helmet>
           <title>Shizuka Takao - Personal Website</title>
           <meta
@@ -42,7 +37,7 @@ function App() {
           />
         </Helmet>
         <AppRoutes />
-      </HashRouter>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }
