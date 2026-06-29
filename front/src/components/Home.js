@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
+import HeroLeafOrnaments from "./HeroLeafOrnaments";
 import ProjectGrid from "./ProjectGrid";
 import EntryGrid from "./EntryGrid";
 import PageFooter from "./PageFooter";
@@ -40,17 +41,20 @@ export default function Home() {
   const sections = getHomeSections();
   return (
     <main className="site-shell">
-      <Navbar />
-      <HeroSection hero={siteContent.hero} />
-      {sections.primary.map((section) => (
-        <ExperienceSection key={section.id} section={section} />
-      ))}
-      <ProjectGrid
-        projects={siteContent.selectedProjects}
-        footerLink={siteContent.allProjectsLink}
-      />
-      <ExperienceSection section={sections.extracurricular} />
-      <PageFooter footer={siteContent.footer} />
+      <HeroLeafOrnaments />
+      <div className="site-shell-content">
+        <Navbar />
+        <HeroSection hero={siteContent.hero} />
+        {sections.primary.map((section) => (
+          <ExperienceSection key={section.id} section={section} />
+        ))}
+        <ProjectGrid
+          projects={siteContent.selectedProjects}
+          footerLink={siteContent.allProjectsLink}
+        />
+        <ExperienceSection section={sections.extracurricular} />
+        <PageFooter footer={siteContent.footer} />
+      </div>
     </main>
   );
 }

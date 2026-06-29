@@ -372,6 +372,26 @@ export const siteContent = {
       },
     ],
   },
+  personalPage: {
+    eyebrow: "Personal",
+    title: "Personal",
+    summary:
+      "A quieter part of the site for writing and visual work, with separate spaces for posts that are public and posts that stay private for now.",
+    sections: [
+      {
+        title: "Blog",
+        summary:
+          "Research notes, reflections, experiments, and longer writing that can stay split between public and private posts.",
+        href: "/blog",
+      },
+      {
+        title: "Arts",
+        summary:
+          "Visual pieces, sketches, and smaller creative work, also organized into public and private sections.",
+        href: "/arts",
+      },
+    ],
+  },
   footer: {
     note: "Selected work across research, engineering, teaching, and product building",
     rightsOwner: "Shizuka Takao",
@@ -388,7 +408,6 @@ export const siteContent = {
  */
 export const navigationItems = [
   { id: "top", label: "Home", href: "/#top" },
-  { label: "About Me", href: "/about" },
   { id: "education", label: "Education", href: "/#education" },
   { id: "research", label: "Research", href: "/#research" },
   { id: "work", label: "Work", href: "/#work" },
@@ -396,6 +415,6 @@ export const navigationItems = [
   { id: "projects", label: "Projects", href: "/#projects" },
   { id: "activities", label: "Extracurricular", href: "/#activities" },
   { label: "All Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Arts", href: "/arts" },
+  { label: "Personal", href: "/personal" },
+  { label: "About Me", href: "/about" },
 ];

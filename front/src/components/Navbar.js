@@ -19,6 +19,13 @@ function handleSectionClick(event, item) {
 }
 
 /**
+ * Returns one stable key for a nav item
+ */
+function getItemKey(item) {
+  return item.href || item.label;
+}
+
+/**
  * Renders the portfolio brand
  */
 function NavBrand() {
@@ -51,7 +58,7 @@ export default function Navbar() {
         <NavBrand />
         <ul className="nav-links">
           {navigationItems.map((item) => (
-            <li key={item.href}>
+            <li key={getItemKey(item)}>
               <NavigationLink item={item} />
             </li>
           ))}
