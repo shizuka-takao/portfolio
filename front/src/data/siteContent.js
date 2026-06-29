@@ -3,6 +3,7 @@
  */
 function isSelectedProject(project) {
   const selectedTitles = [
+    "Minecraft World Models",
     "ContextReply",
     "Sokoban",
     "Clothing Recommendation",
@@ -230,6 +231,32 @@ export const siteContent = {
       tags: ["Computer Vision", "Segmentation", "Tkinter", "GroundingDINO", "SAM"],
     },
   ],
+  education: [
+    {
+      title: "University of California, Irvine",
+      subtitle: "BS in Computer Science",
+      period: "Sep 2024 - Present",
+      summary:
+        "Studying computer science with a growing focus on AI, perception, systems, and building tools that connect research ideas to practical use.",
+      highlights: [
+        "Relevant coursework in data structures, algorithms, software engineering, machine learning, and database systems",
+        "Coursework and project work shaped by curiosity about how technical systems behave in real settings",
+      ],
+      tags: ["Computer Science", "Machine Learning", "Systems"],
+    },
+    {
+      title: "Diablo Valley College",
+      subtitle: "AS in Computer Science and Mathematics",
+      period: "Jan 2022 - May 2024",
+      summary:
+        "Built a strong foundation in mathematics and programming through a transfer pathway grounded in careful problem solving and consistency.",
+      highlights: [
+        "Relevant coursework in object oriented programming, data structures, calculus, linear algebra, and statistics",
+        "Developed the mathematical and technical base that continues to shape later research and engineering work",
+      ],
+      tags: ["Mathematics", "Programming", "Transfer Pathway"],
+    },
+  ],
   workExperience: [
     {
       title: "American Express",
@@ -282,23 +309,25 @@ export const siteContent = {
   },
   extracurricular: [
     {
+      title: "Break Through Tech AI at Cornell",
+      subtitle: "AI Fellow",
+      period: "May 2025 - Present",
+      summary:
+        "Selected for the Break Through Tech AI program and completed the Machine Learning Foundations course through Cornell.",
+    },
+    {
       title: "Women in Computer Science",
       subtitle: "Secretary",
+      period: "Sep 2023 - May 2024",
       summary:
         "Supported communication, planning, and community building for members across events and organization work.",
     },
     {
       title: "Deep Learning Society",
       subtitle: "ICC Representative",
+      period: "Jan 2023 - May 2023",
       summary:
         "Helped strengthen student involvement and connections across the broader campus community.",
-    },
-    {
-      title: "Break Through Tech AI at Cornell",
-      subtitle: "AI Fellow",
-      period: "May 2025 - Present",
-      summary:
-        "Selected for the Break Through Tech AI program and completed the Machine Learning Foundations course through Cornell.",
     },
   ],
   blogPage: {
@@ -343,6 +372,7 @@ export const siteContent = {
   },
   footer: {
     note: "Selected work across research, engineering, teaching, and product building",
+    rightsOwner: "Shizuka Takao",
     links: [
       { label: "GitHub", href: "https://github.com/tkpp26" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/shizukatakao" },
@@ -357,6 +387,7 @@ export const siteContent = {
 export const navigationItems = [
   { id: "top", label: "Home", href: "/#top" },
   { label: "About Me", href: "/about" },
+  { id: "education", label: "Education", href: "/#education" },
   { id: "research", label: "Research", href: "/#research" },
   { id: "work", label: "Work", href: "/#work" },
   { id: "teaching", label: "Teaching", href: "/#teaching" },

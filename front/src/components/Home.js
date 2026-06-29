@@ -13,6 +13,7 @@ import "../stylings/Home.css";
 function getHomeSections() {
   return {
     primary: [
+      { id: "education", title: "Education", items: siteContent.education },
       { id: "research", title: "Research", items: siteContent.research },
       { id: "work", title: "Work", items: siteContent.workExperience },
       { id: "teaching", title: "Teaching", items: siteContent.teachingExperience },

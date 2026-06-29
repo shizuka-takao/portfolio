@@ -8,6 +8,7 @@ import EntryCard from "./EntryCard";
  */
 function getSectionSummary(title) {
   const summaries = {
+    Education: "Academic foundations, coursework, and the training that shaped how I approach technical work.",
     Research: "Research collaborations, technical themes, and work that informs how I build.",
     Work: "Professional experience across product, engineering, and applied technical work.",
     "Work Experience": "Professional experience across product, engineering, and applied technical work.",

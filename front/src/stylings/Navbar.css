@@ -4,7 +4,10 @@
   position: fixed;
   top: 0.9rem;
   left: 50%;
-  width: min(1140px, calc(100% - 1.4rem));
+  width: min(
+    calc(var(--shell-max-width) + (var(--shell-gutter) * 2)),
+    calc(100% - (var(--shell-gutter) * 2))
+  );
   padding: 0.75rem 0.9rem;
   transform: translateX(-50%);
   z-index: 20;
@@ -95,7 +98,7 @@
 @media (max-width: 760px) {
   .navbar {
     top: 0.68rem;
-    width: calc(100% - 1rem);
+    width: calc(100% - (var(--shell-gutter) * 2));
     padding: 0.62rem;
   }
 
