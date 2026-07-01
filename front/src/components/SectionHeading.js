@@ -26,7 +26,7 @@ export default function SectionHeading({ eyebrow, title, summary }) {
       <p className="section-eyebrow">{eyebrow}</p>
       <div className="section-heading-copy">
         <h2 className={getHeadingClassName(title)}>{getDisplayTitle(title)}</h2>
-        <p className="section-summary">{summary}</p>
+        {summary ? <p className="section-summary">{summary}</p> : null}
       </div>
     </header>
   );

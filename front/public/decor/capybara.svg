@@ -1,0 +1,25 @@
+<svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M26 95H194" stroke="#D9D2C6" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M54 75C48 72 45 67 45 60C45 51 52 45 63 43C67 35 76 31 88 31C97 31 104 34 109 40C113 39 118 39 125 39H150C167 39 181 44 190 53C199 62 202 73 200 83C198 90 194 96 187 100C181 103 172 104 159 104H85C76 104 68 102 62 98C56 94 53 86 54 75Z" fill="#FFFDF8" stroke="#736A61" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M67 35C67 30 71 27 76 27C80 27 84 30 85 35" stroke="#736A61" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M87 34C87 30 90 28 94 28C98 28 101 30 102 34" stroke="#736A61" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 92V104" stroke="#736A61" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M111 92V104" stroke="#736A61" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M152 92V104" stroke="#736A61" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M170 91V104" stroke="#736A61" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M199 71C204 72 208 76 210 82" stroke="#736A61" stroke-width="1.7" stroke-linecap="round"/>
+  <circle cx="77" cy="53" r="2" fill="#736A61"/>
+  <circle cx="57" cy="61" r="1.5" fill="#736A61"/>
+  <path d="M54 67C58 69 62 69 66 67" stroke="#736A61" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M34 95C38 91 42 91 46 95" stroke="#D9D2C6" stroke-width="1" stroke-linecap="round"/>
+  <path d="M46 95C50 91 54 91 58 95" stroke="#D9D2C6" stroke-width="1" stroke-linecap="round"/>
+  <path d="M159 95C163 91 167 91 171 95" stroke="#D9D2C6" stroke-width="1" stroke-linecap="round"/>
+  <path d="M171 95C175 91 179 91 183 95" stroke="#D9D2C6" stroke-width="1" stroke-linecap="round"/>
+  <path d="M48 89C53 82 57 76 61 70" stroke="#92AD96" stroke-width="1.1" stroke-linecap="round"/>
+  <g transform="translate(36 79) rotate(-18)">
+    <path d="M0 0C7 -9 17 -11 25 -4C17 5 9 7 0 0Z" fill="#E7EEE8" stroke="#A0B7A3" stroke-width="0.85"/>
+  </g>
+  <g transform="translate(44 71) rotate(14)">
+    <path d="M0 0C8 -10 18 -12 26 -4C18 6 9 8 0 0Z" fill="#E7EEE8" stroke="#A0B7A3" stroke-width="0.85"/>
+  </g>
+</svg>

@@ -10,6 +10,18 @@ function HeroNote({ note }) {
 }
 
 /**
+ * Renders hero notes only when notes are provided
+ */
+function HeroNotes({ notes }) {
+  if (!notes) return null;
+  return (
+    <ul className="hero-notes">
+      {notes.map((note) => <HeroNote key={note} note={note} />)}
+    </ul>
+  );
+}
+
+/**
  * Renders the landing section of the portfolio
  */
 export default function HeroSection({ hero }) {
@@ -18,16 +30,14 @@ export default function HeroSection({ hero }) {
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="hero-kicker">{hero.eyebrow}</p>
-          <h1>{hero.name}</h1>
-          <p className="hero-title">{hero.title}</p>
+          {hero.name ? <h1>{hero.name}</h1> : null}
+          {hero.title ? <p className="hero-title">{hero.title}</p> : null}
         </div>
         <div className="hero-panel">
           <p className="hero-panel-label">{hero.panelLabel}</p>
           <p className="hero-summary">{hero.summary}</p>
           <p className="hero-detail">{hero.detail}</p>
-          <ul className="hero-notes">
-            {hero.notes.map((note) => <HeroNote key={note} note={note} />)}
-          </ul>
+          <HeroNotes notes={hero.notes} />
           <ActionLinks links={hero.links} />
         </div>
       </div>

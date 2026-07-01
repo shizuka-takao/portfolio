@@ -49,9 +49,25 @@ const allProjects = [
     tech: ["Python", "PyTorch", "Gymnasium", "A*", "Double DQN"],
   },
   {
+    title: "Search Engine",
+    subtitle: "Python, React",
+    period: "Jan 2026 - Mar 2026",
+    summary:
+      "Built a search engine with a custom crawler, SPIMI based inverted index, polite crawling, and ranking with TF-IDF, cosine similarity, PageRank, and soft conjunction retrieval.",
+    tech: ["Python", "React", "SPIMI", "TF-IDF", "PageRank"],
+  },
+  {
+    title: "Fabflix",
+    subtitle: "Java, MySQL, Tomcat",
+    period: "Apr 2025 - Jun 2025",
+    summary:
+      "Built a movie platform with Java and MySQL, focused on database design, backend optimization, and production style deployment patterns.",
+    tech: ["Java", "MySQL", "Tomcat", "AWS", "Docker"],
+  },
+  {
     title: "Clothing Recommendation",
     subtitle: "TensorFlow, Flask, React",
-    period: "Aug 2024",
+    period: "Aug 2024 - Sep 2024",
     summary:
       "Built an image retrieval system using ResNet 50 embeddings and cosine similarity to return top matches across more than 10,000 fashion items.",
     tech: ["TensorFlow", "Flask", "React", "ResNet50", "Computer Vision"],
@@ -67,86 +83,21 @@ const allProjects = [
     ],
   },
   {
-    title: "Search Engine",
-    subtitle: "Python, React",
-    period: "Jan 2026 - Mar 2026",
-    summary:
-      "Built a search engine with a custom crawler, SPIMI based inverted index, polite crawling, and ranking with TF-IDF, cosine similarity, PageRank, and soft conjunction retrieval.",
-    tech: ["Python", "React", "SPIMI", "TF-IDF", "PageRank"],
-  },
-  {
-    title: "Fabflix",
-    subtitle: "Java, MySQL, Tomcat",
-    period: "Full Stack Systems Project",
-    summary:
-      "Built a movie platform with Java and MySQL, focused on database design, backend optimization, and production style deployment patterns.",
-    tech: ["Java", "MySQL", "Tomcat", "AWS", "Docker"],
-  },
-  {
     title: "Recipe Maker",
-    subtitle: "AI Web App",
+    subtitle: "React, Flask",
+    period: "Jun 2024 - Aug 2024",
     summary:
       "A recipe web app that combines ingredient input, image based detection, and generated cooking guidance in a single workflow.",
     tech: ["React", "Flask", "TensorFlow", "OpenAI API"],
     links: [
       { label: "GitHub", href: "https://github.com/khmorad/recipeMakerAI" },
       {
+        label: "Demo",
+        href: "https://www.youtube.com/watch?v=erw31rS5tag",
+      },
+      {
         label: "Live Site",
         href: "https://recepie-maker-ai.vercel.app/",
-      },
-    ],
-  },
-  {
-    title: "Mood Stabilizer",
-    subtitle: "Next.js, FastAPI, MySQL",
-    summary:
-      "A journaling app built to support emotional reflection with AI prompts, text to speech, secure authentication, and a full stack architecture.",
-    tech: ["Next.js", "TypeScript", "FastAPI", "MySQL", "AWS"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/khmorad/Mood-Tracker",
-      },
-      {
-        label: "Demo",
-        href: "https://mood-tracker-rosy.vercel.app/",
-      },
-    ],
-  },
-  {
-    title: "Minimax and Alpha-Beta Visualization",
-    subtitle: "Python, Streamlit",
-    summary:
-      "An interactive learning tool for visualizing Minimax and Alpha-Beta pruning and seeing how adversarial search decisions evolve step by step.",
-    tech: ["Python", "Streamlit", "Algorithms"],
-  },
-  {
-    title: "Diabetes Risk Prediction",
-    subtitle: "Python, Scikit-learn",
-    summary:
-      "An ensemble classification project built with careful preprocessing, feature engineering, and clear analysis of health risk signals.",
-    tech: ["Python", "Scikit-learn", "Pandas", "Jupyter"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/tkpp26/Diabetes-Classification",
-      },
-      {
-        label: "Colab",
-        href: "https://colab.research.google.com/drive/1csXvpUAIGlWY8na0sDJoLn-MRuGZwIjY?usp=sharing",
-      },
-    ],
-  },
-  {
-    title: "NewsWeb",
-    subtitle: "JavaScript, HTML, CSS",
-    summary:
-      "A news reader that surfaces recent stories across categories using the NewsAPI and a lightweight frontend built for quick browsing.",
-    tech: ["JavaScript", "HTML", "CSS", "NewsAPI"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/tkpp26/NewsWeb",
       },
     ],
   },
@@ -158,39 +109,31 @@ const allProjects = [
 export const siteContent = {
   hero: {
     eyebrow: "Shizuka Takao",
-    name: "Curious about how things work. Careful about how they are built.",
-    title:
-      "Drawn to AI, perception, biomedical tools, and systems that turn vague problems into something concrete, tested, and genuinely useful.",
-    panelLabel: "How I tend to work",
+    name: "Curious about perception, robotics, and applied AI",
+    panelLabel: "Research Interests",
     summary:
-      "I ask a lot of questions, notice small details, and stay with problems long enough to understand why they work, why they fail, and what would make them more useful.",
+      "My research interests center on AI systems that perceive real-world environments, reason from visual information, and support reliable decision-making.",
     detail:
-      "The work that feels most natural to me sits between research and building: messy inputs, unclear constraints, and the slow process of shaping them into tools another person can trust.",
-    notes: [
-      "Reflective, detail-oriented, and quietly ambitious",
-      "Interested in systems that connect technical ideas to real-world use",
-      "Most at home when research and building inform each other",
-    ],
+      "I am especially interested in projects that combine computer vision, representation learning, and simulation, particularly in robotics, autonomous navigation, and AI-powered tools.",
     links: [
-      { label: "GitHub", href: "https://github.com/tkpp26" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/shizukatakao" },
+      { label: "GitHub", href: "https://github.com/shizuka-takao" },
       { label: "Resume", href: "/Resume_2026_Summer.pdf" },
     ],
   },
   aboutPage: {
     eyebrow: "About Me",
-    title: "Thoughtful work, built carefully",
     summary:
-      "I am intellectually curious, detail-oriented, and usually more interested in understanding a problem well than rushing to the first answer.",
+      "I am an undergraduate student majoring in Computer Science at the University of California, Irvine. My interests center on computer vision, embodied AI, and efficient AI systems for real-world perception and decision-making.",
+
     details: [
-      "What keeps me interested in technical work is the combination of curiosity and usefulness. I like asking why a system behaves the way it does, where it breaks down, and how it can become more dependable in practice.",
-      "I am especially drawn to AI, perception, robotics-adjacent systems, biomedical tools, and interfaces between research ideas and real-world use. I like work that begins a little undefined and becomes clearer through observation, iteration, and testing.",
-      "The way I build is usually quiet and persistent. I notice small details, care about whether something is actually usable, and try to make technical work feel more grounded, more thoughtful, and more human.",
+      "At UC Irvine, I conduct research in the Ding Lab under the guidance of Professor Fangyuan Ding, where I work on integrating deep learning models with GUI-based tools to support cell image segmentation and biomedical image analysis.",
+      "My broader research interests are in perception-driven AI systems: systems that can understand visual environments, reason from sensory information, and support reliable decisions in real-world settings. I am especially interested in computer vision, representation learning, simulation, embodied AI, and world models.",
+      "More recently, I have been exploring research directions related to Professor Mengyu Wang’s AI and robotics projects, especially world models and embodied AI, as well as Professor Marco Levorato’s work on efficient, deployable AI systems, including vision-language models and edge-cloud deployment. These directions connect closely with my interest in building AI systems that bridge perception, decision-making, and practical deployment.",
     ],
+
     imageAlt: "Shizuka Takao portrait",
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/shizukatakao" },
-      { label: "GitHub", href: "https://github.com/tkpp26" },
+      { label: "GitHub", href: "https://github.com/shizuka-takao" },
       { label: "Resume", href: "/Resume_2026_Summer.pdf" },
     ],
   },
@@ -202,18 +145,18 @@ export const siteContent = {
       institution: "Harvard University",
       advisor: "Advisor: Mengyu Wang",
       summary:
-        "Research collaboration centered on applied machine learning, experimentation, and translating technical questions into clear implementation work.",
-      tags: ["Machine Learning", "Experimentation", "Research"],
+        "Early-stage research work exploring project directions in AI, robotics, embodied AI, and world models. Details will be updated as the project scope develops.",
+      tags: ["Embodied AI", "World Models", "Research"],
     },
     {
-      title: "Levorato Lab",
+      title: "Intelligent and Autonomous Systems Lab",
       subtitle: "Undergraduate Research Assistant",
       period: "Jun 2026 - Present",
       institution: "UC Irvine",
       advisor: "Advisor: Marco Levorato",
       summary:
-        "Systems oriented research work grounded in implementation, iteration, and careful communication of technical ideas.",
-      tags: ["Systems", "Networking", "Research"],
+        "Early-stage research work exploring efficient, deployable AI systems, including vision-language models, edge-cloud deployment, and system-level implementation. Details will be updated as the project scope develops.",
+      tags: ["Efficient AI", "Vision-Language Models", "Systems"],
     },
     {
       title: "Ding Lab",
@@ -228,7 +171,16 @@ export const siteContent = {
         "Prepared Cellpose-SAM training data and benchmarked segmentation quality with IoU, Dice, and frame level metrics",
         "Built a Tkinter annotation tool with multithreaded segmentation and export workflows that cut manual segmentation time by 90%",
       ],
-      tags: ["Computer Vision", "Segmentation", "Tkinter", "GroundingDINO", "SAM"],
+      links: [
+        { label: "GitHub", href: "https://github.com/UCI-Ding-Lab/FISH-ML2" },
+      ],
+      tags: [
+        "Computer Vision",
+        "Segmentation",
+        "Tkinter",
+        "GroundingDINO",
+        "SAM",
+      ],
     },
   ],
   education: [
@@ -236,27 +188,29 @@ export const siteContent = {
       title: "University of California, Irvine",
       subtitle: "BS in Computer Science",
       period: "Sep 2024 - Present",
-      contextLines: ["Intelligent Systems Specialization", "GPA: 3.98"],
-      summary:
-        "Studying computer science with a growing focus on AI, perception, systems, and building tools that connect research ideas to practical use.",
-      highlights: [
-        "Relevant coursework in data structures, algorithms, software engineering, machine learning, and database systems",
-        "Coursework and project work shaped by curiosity about how technical systems behave in real settings",
+      contextLines: [
+        "Intelligent Systems Specialization",
+        "GPA: 3.98/4.00",
+        "Magna Cum Laude, top 2-6% of cohort",
       ],
-      tags: ["Computer Science", "Machine Learning", "Systems"],
+      highlightStyle: "labeled",
+      highlights: [
+        "AI and machine learning: Machine Learning and Data Mining, Introduction to Artificial Intelligence, Deep Generative Models, Applications of Probability in CS, Algorithms for Graph Models, Project in AI, Project in Computer Vision",
+        "Other electives: Information Retrieval, Introduction to Data Management, Project in Data and Web Apps, Programming in Java",
+        "Core: Data Structures Implementation and Analysis, Principles in System Design, Introduction to Software Engineering, Boolean Logic and Discrete Structures, Probability and Statistics for CS",
+      ],
     },
     {
       title: "Diablo Valley College",
       subtitle: "AS in Computer Science and Mathematics",
       period: "Jan 2022 - May 2024",
-      contextLines: ["GPA: 4.00"],
-      summary:
-        "Built a strong foundation in mathematics and programming through a transfer pathway grounded in careful problem solving and consistency.",
+      contextLines: ["GPA: 4.00/4.00"],
+      highlightStyle: "labeled",
       highlights: [
-        "Relevant coursework in object oriented programming, data structures, calculus, linear algebra, and statistics",
-        "Developed the mathematical and technical base that continues to shape later research and engineering work",
+        "Computer science: Program Design and Data Structures, Assembly Language Programming and Computer Organization, Object Oriented Programming in C++, Advanced Programming with C and C++, Introduction to Programming, Computer Programming Using MATLAB",
+        "Mathematics: Discrete Mathematics, Linear Algebra, Statistics and Probability, Differential Equations, Calculus III, Calculus II, Calculus I",
+        "Physics: Mechanics and Wave Motion, Heat and Electromagnetism",
       ],
-      tags: ["Mathematics", "Programming", "Transfer Pathway"],
     },
   ],
   workExperience: [
@@ -264,21 +218,20 @@ export const siteContent = {
       title: "American Express",
       subtitle: "Data Science Fellow",
       period: "Aug 2025 - Dec 2025",
-      summary:
-        "Built an end to end credit risk classification workflow spanning data cleaning, feature engineering, imbalance handling, and model evaluation.",
+      summary: "Built an end to end credit risk classification workflow.",
       highlights: [
         "Trained and evaluated XGBoost models for imbalanced classification, reaching 0.83 validation accuracy",
         "Designed a pipeline for feature engineering, hyperparameter tuning, and repeatable validation",
         "Built a Streamlit interface for real time credit score probability inference",
       ],
-      tags: ["XGBoost", "Streamlit", "Classification", "Feature Engineering"],
+      tags: ["Data Preprocessing", "Supervised Learning"],
     },
     {
       title: "Kasanare",
       subtitle: "Software Engineer Intern",
       period: "Jun 2023 - Aug 2023",
       summary:
-        "Developed LLM powered chatbot features in Tokyo using retrieval, memory, and prompt design to improve response quality and grounding.",
+        "Developed LLM powered chatbot features using retrievaland prompt design to improve response quality.",
       highlights: [
         "Built retrieval augmented generation flows with LangChain and Pinecone",
         "Applied zero shot and chain of thought prompting strategies to improve relevance and grounding",
@@ -292,14 +245,14 @@ export const siteContent = {
       subtitle: "ICS 53 Learning Assistant",
       period: "Sep 2026 - Present",
       summary:
-        "Supported students in learning lower level systems concepts through approachable explanations, steady guidance, and hands on problem solving.",
+        "Supported students with ICS 53 systems programming topics, including process and memory management, shell behavior, concurrency, synchronization, and operating systems concepts.",
     },
     {
       title: "Diablo Valley College",
       subtitle: "Mathematics Tutor",
       period: "Mar 2023 - Sep 2023",
       summary:
-        "Guided students through core math topics with a patient and structured teaching style that focused on understanding rather than memorization.",
+        "Facilitated tutoring sessions, guiding students through math concepts up to multivariable calculus.",
     },
   ],
   selectedProjects: getSelectedProjects(allProjects),
@@ -322,14 +275,14 @@ export const siteContent = {
       subtitle: "Secretary",
       period: "Sep 2023 - May 2024",
       summary:
-        "Supported communication, planning, and community building for members across events and organization work.",
+        "Maintained records for general, executive, and collaboration meetings while helping coordinate speaker events for a supportive community of women in computing.",
     },
     {
       title: "Deep Learning Society",
       subtitle: "ICC Representative",
       period: "Jan 2023 - May 2023",
       summary:
-        "Helped strengthen student involvement and connections across the broader campus community.",
+        "Represented the club in funding meetings to support resource allocation.",
     },
   ],
   blogPage: {
@@ -397,7 +350,6 @@ export const siteContent = {
     rightsOwner: "Shizuka Takao",
     links: [
       { label: "GitHub", href: "https://github.com/tkpp26" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/shizukatakao" },
       { label: "Resume", href: "/Resume_2026_Summer.pdf" },
     ],
   },

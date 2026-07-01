@@ -23,13 +23,52 @@ function EntryMeta({ index, item }) {
 }
 
 /**
+ * Splits a highlight into a label and description
+ */
+function getHighlightParts(highlight) {
+  const separatorIndex = highlight.indexOf(":");
+  if (separatorIndex === -1) return null;
+  return {
+    label: highlight.slice(0, separatorIndex),
+    description: highlight.slice(separatorIndex + 1).trim(),
+  };
+}
+
+/**
+ * Renders one labeled coursework highlight
+ */
+function LabeledHighlight({ highlight }) {
+  const parts = getHighlightParts(highlight);
+  if (!parts) return highlight;
+  return (
+    <>
+      <span className="entry-highlight-label">[{parts.label}]</span>
+      <span>{parts.description}</span>
+    </>
+  );
+}
+
+/**
+ * Renders one highlight item
+ */
+function EntryHighlight({ highlight, highlightStyle }) {
+  if (highlightStyle === "labeled") {
+    return <li><LabeledHighlight highlight={highlight} /></li>;
+  }
+  return <li>{highlight}</li>;
+}
+
+/**
  * Renders the short highlight list for one entry
  */
-function EntryHighlights({ highlights }) {
+function EntryHighlights({ highlights, highlightStyle }) {
   if (!highlights) return null;
+  const className = highlightStyle === "labeled" ? "entry-highlights entry-highlights-labeled" : "entry-highlights";
   return (
-    <ul className="entry-highlights">
-      {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+    <ul className={className}>
+      {highlights.map((highlight) => (
+        <EntryHighlight key={highlight} highlight={highlight} highlightStyle={highlightStyle} />
+      ))}
     </ul>
   );
 }
@@ -66,7 +105,7 @@ export default function EntryCard({ index, item }) {
         <h3>{item.title}</h3>
         <EntryContext item={item} />
         <p className="card-summary">{item.summary}</p>
-        <EntryHighlights highlights={item.highlights} />
+        <EntryHighlights highlights={item.highlights} highlightStyle={item.highlightStyle} />
         {item.links ? <ActionLinks links={item.links} /> : null}
         {item.tags ? <TagList tags={item.tags} /> : null}
       </div>

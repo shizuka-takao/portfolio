@@ -16,7 +16,7 @@
   --shell-max-width: 1140px;
   --shell-gutter: clamp(1.1rem, 3vw, 2rem);
   --shadow: 0 18px 44px rgba(33, 28, 23, 0.08);
-  --nav-clearance: 7.3rem;
+  --nav-clearance: 5.8rem;
   --serif: "Cormorant Garamond", serif;
   --sans: "Manrope", sans-serif;
   --mono: "IBM Plex Mono", monospace;
@@ -87,7 +87,7 @@ a {
   position: relative;
   max-width: calc(var(--shell-max-width) + (var(--shell-gutter) * 2));
   margin: 0 auto;
-  padding: calc(var(--nav-clearance) + 0.55rem) var(--shell-gutter) 4rem;
+  padding: calc(var(--nav-clearance) + 1.75rem) var(--shell-gutter) 4rem;
   overflow: visible;
 }
 
@@ -117,7 +117,7 @@ a {
 .hero-section,
 .archive-section,
 .about-section-page {
-  padding-top: 0.5rem;
+  padding-top: 1.4rem;
   border-top: none;
 }
 
@@ -140,7 +140,7 @@ a {
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 360px);
   gap: 2.6rem;
   align-items: end;
-  min-height: min(72vh, 720px);
+  min-height: min(42vh, 420px);
 }
 
 .hero-leaf-frame {
@@ -230,7 +230,7 @@ a {
   position: relative;
   display: grid;
   align-content: end;
-  gap: 0.9rem;
+  gap: 1.15rem;
   z-index: 1;
 }
 
@@ -395,7 +395,7 @@ a {
 }
 
 .section-summary {
-  max-width: 17rem;
+  max-width: 24rem;
 }
 
 .project-list {
@@ -582,6 +582,26 @@ a {
 
 .entry-highlights li {
   line-height: 1.7;
+}
+
+.entry-highlights-labeled {
+  gap: 0.8rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.entry-highlights-labeled li {
+  display: grid;
+  gap: 0.34rem;
+}
+
+.entry-highlight-label {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .entry-card .tag-list {
@@ -780,7 +800,7 @@ a {
 
 @media (max-width: 760px) {
   :root {
-    --nav-clearance: 6.95rem;
+    --nav-clearance: 5.4rem;
   }
 
   .site-shell {
@@ -849,7 +869,7 @@ a {
 
 @media (max-width: 560px) {
   :root {
-    --nav-clearance: 6.6rem;
+    --nav-clearance: 5rem;
   }
 
   .hero-leaf-center,

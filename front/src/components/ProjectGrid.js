@@ -23,7 +23,7 @@ export default function ProjectGrid({
   id = "projects",
   eyebrow = "Selected Work",
   title = "Selected Projects",
-  summary = "A smaller set of software and machine learning projects that complement the research and work above.",
+  summary = "",
   projects,
   footerLink,
 }) {

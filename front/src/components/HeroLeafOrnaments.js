@@ -148,13 +148,6 @@ function TopLeafCluster() {
 }
 
 /**
- * Renders the branch near the lower left edge
- */
-function BottomLeafCluster() {
-  return <LeafDrawing className="hero-leaf hero-leaf-bottom" viewBox="0 0 240 90">{bottomLeafArtwork}</LeafDrawing>;
-}
-
-/**
  * Renders the larger branch on the right side
  */
 function SideLeafCluster() {
@@ -199,7 +192,6 @@ export default function HeroLeafOrnaments() {
       <CenterLeafCluster />
       <MiddleAccentCluster />
       <SoftMiddleLeafCluster />
-      <BottomLeafCluster />
       <SideLeafCluster />
       <CornerLeafCluster />
     </div>
