@@ -266,7 +266,7 @@ export const siteContent = {
     {
       title: "Break Through Tech AI at Cornell",
       subtitle: "AI Fellow",
-      period: "May 2025 - Present",
+      period: "May 2025 - Mar 2026",
       summary:
         "Selected for the Break Through Tech AI program and completed the Machine Learning Foundations course through Cornell.",
     },
