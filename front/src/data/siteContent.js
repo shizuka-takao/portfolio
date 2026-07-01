@@ -264,11 +264,11 @@ export const siteContent = {
   },
   extracurricular: [
     {
-      title: "Break Through Tech AI at Cornell",
+      title: "Break Through Tech AI at Cornell Tech",
       subtitle: "AI Fellow",
       period: "May 2025 - Mar 2026",
       summary:
-        "Selected for the Break Through Tech AI program and completed the Machine Learning Foundations course through Cornell.",
+        "Selected for the Break Through Tech AI program and completed the Machine Learning Foundations course through Cornell University.",
     },
     {
       title: "Women in Computer Science",
