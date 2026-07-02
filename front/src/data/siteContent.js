@@ -239,15 +239,7 @@ export const siteContent = {
       tags: ["RAG", "LangChain", "Pinecone", "Prompt Engineering"],
     },
   ],
-  teachingExperience: [
-    {
-      title: "Diablo Valley College",
-      subtitle: "Mathematics Tutor",
-      period: "Mar 2023 - Sep 2023",
-      summary:
-        "Facilitated tutoring sessions, guiding students through math concepts up to multivariable calculus.",
-    },
-  ],
+  teachingExperience: [],
   selectedProjects: getSelectedProjects(allProjects),
   allProjects,
   allProjectsLink: {
@@ -269,6 +261,13 @@ export const siteContent = {
       period: "Sep 2023 - May 2024",
       summary:
         "Maintained records for general, executive, and collaboration meetings while helping coordinate speaker events for a supportive community of women in computing.",
+    },
+    {
+      title: "Diablo Valley College",
+      subtitle: "Mathematics Tutor",
+      period: "Mar 2023 - Sep 2023",
+      summary:
+        "Facilitated tutoring sessions, guiding students through math concepts up to multivariable calculus.",
     },
     {
       title: "Deep Learning Society",
@@ -356,7 +355,6 @@ export const navigationItems = [
   { id: "education", label: "Education", href: "/#education" },
   { id: "research", label: "Research", href: "/#research" },
   { id: "work", label: "Work", href: "/#work" },
-  { id: "teaching", label: "Teaching", href: "/#teaching" },
   { id: "projects", label: "Projects", href: "/#projects" },
   { id: "activities", label: "Extracurricular", href: "/#activities" },
   { label: "All Projects", href: "/projects" },
