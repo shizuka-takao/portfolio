@@ -241,13 +241,6 @@ export const siteContent = {
   ],
   teachingExperience: [
     {
-      title: "UC Irvine",
-      subtitle: "ICS 53 Learning Assistant",
-      period: "Sep 2026 - Present",
-      summary:
-        "Supported students with ICS 53 systems programming topics, including process and memory management, shell behavior, concurrency, synchronization, and operating systems concepts.",
-    },
-    {
       title: "Diablo Valley College",
       subtitle: "Mathematics Tutor",
       period: "Mar 2023 - Sep 2023",
