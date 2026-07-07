@@ -27,7 +27,7 @@ const allProjects = [
   {
     title: "Minecraft World Models",
     subtitle: "World Models, MCP, Embodied AI",
-    period: "Jun 2026 - Present",
+    period: "July 2026 - Present",
     summary:
       "A research driven project exploring world models in Minecraft with MCP style tool use, environment interaction, and grounded decision making for open ended tasks.",
     tech: ["Python", "World Models", "Minecraft", "MCP", "Embodied AI"],
@@ -141,7 +141,7 @@ export const siteContent = {
     {
       title: "Harvard AI and Robotics Lab",
       subtitle: "Undergraduate Research Assistant",
-      period: "Jun 2026 - Present",
+      period: "July 2026 - Present",
       institution: "Harvard University",
       advisor: "Advisor: Mengyu Wang",
       summary:
@@ -229,7 +229,7 @@ export const siteContent = {
     {
       title: "Kasanare",
       subtitle: "Software Engineer Intern",
-      period: "Jun 2023 - Aug 2023",
+      period: "Dec 2023 - Jan 2024",
       summary:
         "Developed LLM powered chatbot features using retrievaland prompt design to improve response quality.",
       highlights: [
