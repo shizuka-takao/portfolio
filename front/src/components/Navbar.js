@@ -2,6 +2,7 @@ import React from "react";
 import { navigationItems } from "../data/siteContent";
 import "../stylings/Navbar.css";
 import { scrollToSection } from "../utils/scrollTo";
+import ScrambleText from "./ScrambleText";
 
 /**
  * Returns true when the user is on the homepage
@@ -31,8 +32,7 @@ function getItemKey(item) {
 function NavBrand() {
   return (
     <a className="nav-brand" href="/#top" onClick={(event) => handleSectionClick(event, { id: "top" })}>
-      <span className="brand-mark">ST</span>
-      <span className="brand-name">Shizuka Takao</span>
+      <span className="brand-mark" aria-hidden="true">ST</span>
     </a>
   );
 }
@@ -42,16 +42,28 @@ function NavBrand() {
  */
 function NavigationLink({ item }) {
   return (
-    <a href={item.href} onClick={(event) => handleSectionClick(event, item)}>
-      {item.label}
+    <a className="nav-link" href={item.href} onClick={(event) => handleSectionClick(event, item)}>
+      <ScrambleText as="span" text={item.label} className="nav-link-text" playOnHover />
     </a>
+  );
+}
+
+/**
+ * Builds the theme icon toggle
+ */
+function ThemeToggle({ theme, onToggleTheme }) {
+  const label = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+  return (
+    <button className="theme-toggle" type="button" onClick={onToggleTheme} aria-label={label}>
+      <span className="theme-toggle-core" />
+    </button>
   );
 }
 
 /**
  * Renders the top navigation bar
  */
-export default function Navbar() {
+export default function Navbar({ theme, onToggleTheme }) {
   return (
     <nav className="navbar" aria-label="Section navigation">
       <div className="nav-inner">
@@ -63,6 +75,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
       </div>
     </nav>
   );

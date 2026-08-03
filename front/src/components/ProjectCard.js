@@ -16,7 +16,8 @@ function ProjectMeta({ index, project }) {
   return (
     <div className="project-meta">
       <p className="project-index">{formatProjectNumber(index)}</p>
-      <p className="card-kicker">{project.subtitle}</p>
+      <p className="card-kicker">Program</p>
+      <p className="project-meta-value">{project.subtitle}</p>
       {project.period ? <p className="project-period">{project.period}</p> : null}
     </div>
   );

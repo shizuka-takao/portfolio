@@ -357,7 +357,6 @@ export const navigationItems = [
   { id: "work", label: "Work", href: "/#work" },
   { id: "projects", label: "Projects", href: "/#projects" },
   { id: "activities", label: "Extracurricular", href: "/#activities" },
-  { label: "All Projects", href: "/projects" },
   { label: "Personal", href: "/personal" },
   { label: "About Me", href: "/about" },
 ];

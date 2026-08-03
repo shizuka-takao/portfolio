@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(76, 149, 255, 0.24);
+  color: #f4f7fb;
+}
+
+.scramble-text {
+  display: inline-block;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  color: inherit;
+}

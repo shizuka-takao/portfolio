@@ -3,6 +3,43 @@ import SectionShell from "./SectionShell";
 import ActionLinks from "./ActionLinks";
 
 /**
+ * Returns a stable key for one hero character
+ */
+function getHeroCharacterKey(character, index) {
+  return `${character}-${index}`;
+}
+
+/**
+ * Renders one animated hero character
+ */
+function HeroCharacter({ character, index }) {
+  const style = { "--hero-char-index": index };
+  const content = character === " " ? "\u00A0" : character;
+  return (
+    <span className="hero-char" style={style}>
+      {content}
+    </span>
+  );
+}
+
+/**
+ * Renders the full hero title in the artistic style
+ */
+function HeroHeadline({ title }) {
+  return (
+    <h1 className="hero-script-word" aria-label={title}>
+      {title.split("").map((character, index) => (
+        <HeroCharacter
+          key={getHeroCharacterKey(character, index)}
+          character={character}
+          index={index}
+        />
+      ))}
+    </h1>
+  );
+}
+
+/**
  * Builds one short hero note
  */
 function HeroNote({ note }) {
@@ -24,13 +61,14 @@ function HeroNotes({ notes }) {
 /**
  * Renders the landing section of the portfolio
  */
-export default function HeroSection({ hero }) {
+export default function HeroSection({ hero, hideHeadline = false }) {
+  const headlineClassName = hideHeadline ? "hero-headline hero-headline-hidden" : "hero-headline";
   return (
     <SectionShell id="top" className="hero-section">
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="hero-kicker">{hero.eyebrow}</p>
-          {hero.name ? <h1>{hero.name}</h1> : null}
+          {hero.name ? <div className={headlineClassName}><HeroHeadline title={hero.name} /></div> : null}
           {hero.title ? <p className="hero-title">{hero.title}</p> : null}
         </div>
         <div className="hero-panel">

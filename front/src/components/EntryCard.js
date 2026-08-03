@@ -16,7 +16,8 @@ function EntryMeta({ index, item }) {
   return (
     <div className="entry-meta">
       <p className="entry-index">{formatEntryNumber(index)}</p>
-      <p className="card-kicker">{item.subtitle}</p>
+      <p className="card-kicker">Role</p>
+      <p className="entry-meta-value">{item.subtitle}</p>
       {item.period ? <p className="entry-period">{item.period}</p> : null}
     </div>
   );
