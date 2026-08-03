@@ -77,6 +77,44 @@ function getNextTheme(theme) {
 }
 
 /**
+ * Renders one star in the intro constellation
+ */
+function IntroStar({ className }) {
+  return <span className={`intro-star ${className}`.trim()} />;
+}
+
+/**
+ * Renders one line in the intro constellation
+ */
+function IntroConstellationLine({ className }) {
+  return <span className={`intro-constellation-line ${className}`.trim()} />;
+}
+
+/**
+ * Renders the intro constellation cluster
+ */
+function IntroConstellation() {
+  return (
+    <>
+      <div className="intro-constellation intro-constellation-left" aria-hidden="true">
+        <IntroStar className="intro-star-a" />
+        <IntroStar className="intro-star-b" />
+        <IntroStar className="intro-star-c" />
+        <IntroConstellationLine className="intro-line-ab" />
+        <IntroConstellationLine className="intro-line-bc" />
+      </div>
+      <div className="intro-constellation intro-constellation-right" aria-hidden="true">
+        <IntroStar className="intro-star-d" />
+        <IntroStar className="intro-star-e" />
+        <IntroStar className="intro-star-f" />
+        <IntroConstellationLine className="intro-line-de" />
+        <IntroConstellationLine className="intro-line-ef" />
+      </div>
+    </>
+  );
+}
+
+/**
  * Renders the intro headline shown before the page appears
  */
 function IntroHeadline({ title, visibleCount, isMoving }) {
@@ -114,6 +152,7 @@ function HomeIntro({ title, isVisible, isMoving, visibleCount }) {
   return (
     <div className="home-intro">
       <div className={stageClassName}>
+        <IntroConstellation />
         <IntroHeadline title={title} visibleCount={visibleCount} isMoving={isMoving} />
       </div>
     </div>
