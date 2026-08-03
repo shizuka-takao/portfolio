@@ -96,9 +96,10 @@ export default function ScrambleText({
     const timeoutId = window.setTimeout(() => {
       runScramble(text, setDisplayText, timerRef);
     }, 120);
+    const currentTimerRef = timerRef;
     return () => {
       window.clearTimeout(timeoutId);
-      window.clearInterval(timerRef.current);
+      window.clearInterval(currentTimerRef.current);
     };
   }, [playOnLoad, text]);
 
