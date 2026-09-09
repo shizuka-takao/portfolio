@@ -8,30 +8,6 @@ import { siteContent } from "../data/siteContent";
 import "../stylings/Home.css";
 
 const DEFAULT_THEME = "dark";
-const INTRO_LETTER_DELAY_MS = 85;
-const INTRO_HOLD_DELAY_MS = 3000;
-const INTRO_MOVE_DURATION_MS = 2400;
-
-/**
- * Returns the intro text that should be visible at one moment
- */
-function getVisibleIntroText(title, visibleCount) {
-  return title.slice(0, visibleCount);
-}
-
-/**
- * Returns the total time before the intro should start moving
- */
-function getIntroMoveDelay(title) {
-  return (title.length * INTRO_LETTER_DELAY_MS) + INTRO_HOLD_DELAY_MS;
-}
-
-/**
- * Returns the total time before the intro should end
- */
-function getIntroCompleteDelay(title) {
-  return getIntroMoveDelay(title) + INTRO_MOVE_DURATION_MS;
-}
 
 /**
  * Returns the experience sections shown above projects
@@ -59,16 +35,6 @@ function ExperienceSection({ section }) {
 }
 
 /**
- * Returns the wrapper class for the homepage
- */
-function getHomeClassName(isIntroActive, isPageVisible) {
-  const classNames = ["site-shell"];
-  if (isIntroActive) classNames.push("site-shell-intro");
-  if (isPageVisible) classNames.push("site-shell-visible");
-  return classNames.join(" ");
-}
-
-/**
  * Returns the opposite theme mode
  */
 function getNextTheme(theme) {
@@ -77,123 +43,15 @@ function getNextTheme(theme) {
 }
 
 /**
- * Renders one star in the intro constellation
- */
-function IntroStar({ className }) {
-  return <span className={`intro-star ${className}`.trim()} />;
-}
-
-/**
- * Renders one line in the intro constellation
- */
-function IntroConstellationLine({ className }) {
-  return <span className={`intro-constellation-line ${className}`.trim()} />;
-}
-
-/**
- * Renders the intro constellation cluster
- */
-function IntroConstellation() {
-  return (
-    <>
-      <div className="intro-constellation intro-constellation-left" aria-hidden="true">
-        <IntroStar className="intro-star-a" />
-        <IntroStar className="intro-star-b" />
-        <IntroStar className="intro-star-c" />
-        <IntroConstellationLine className="intro-line-ab" />
-        <IntroConstellationLine className="intro-line-bc" />
-      </div>
-      <div className="intro-constellation intro-constellation-right" aria-hidden="true">
-        <IntroStar className="intro-star-d" />
-        <IntroStar className="intro-star-e" />
-        <IntroStar className="intro-star-f" />
-        <IntroConstellationLine className="intro-line-de" />
-        <IntroConstellationLine className="intro-line-ef" />
-      </div>
-    </>
-  );
-}
-
-/**
- * Renders the intro headline shown before the page appears
- */
-function IntroHeadline({ title, visibleCount, isMoving }) {
-  const visibleText = getVisibleIntroText(title, visibleCount);
-  const headlineClassName = isMoving ? "intro-headline intro-headline-moving" : "intro-headline";
-  return (
-    <h1 className={headlineClassName} aria-label={title}>
-      {visibleText.split("").map((character, index) => (
-        <span
-          key={`${character}-${index}`}
-          className="intro-visible-char"
-          style={{ "--intro-move-index": index }}
-        >
-          {character === " " ? "\u00A0" : character}
-        </span>
-      ))}
-    </h1>
-  );
-}
-
-/**
- * Renders the full screen homepage intro
- */
-function getIntroStageClassName(isMoving) {
-  if (isMoving) return "home-intro-stage home-intro-stage-moving";
-  return "home-intro-stage";
-}
-
-/**
- * Renders the full screen homepage intro
- */
-function HomeIntro({ title, isVisible, isMoving, visibleCount }) {
-  if (!isVisible) return null;
-  const stageClassName = getIntroStageClassName(isMoving);
-  return (
-    <div className="home-intro">
-      <div className={stageClassName}>
-        <IntroConstellation />
-        <IntroHeadline title={title} visibleCount={visibleCount} isMoving={isMoving} />
-      </div>
-    </div>
-  );
-}
-
-/**
  * Renders the full portfolio page
  */
 export default function Home() {
   const [theme, setTheme] = useState(DEFAULT_THEME);
-  const [isIntroActive, setIsIntroActive] = useState(true);
-  const [isPageVisible, setIsPageVisible] = useState(false);
-  const [isIntroMoving, setIsIntroMoving] = useState(false);
-  const [visibleIntroCount, setVisibleIntroCount] = useState(0);
   const sections = getHomeSections();
-  const homeClassName = getHomeClassName(isIntroActive, isPageVisible);
-  const introTitle = siteContent.hero.name;
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
-
-  useEffect(() => {
-    const moveTimer = window.setTimeout(() => setIsIntroMoving(true), getIntroMoveDelay(introTitle));
-    const revealTimer = window.setTimeout(() => setIsPageVisible(true), getIntroMoveDelay(introTitle) + 700);
-    const completeTimer = window.setTimeout(() => setIsIntroActive(false), getIntroCompleteDelay(introTitle));
-    return () => {
-      window.clearTimeout(moveTimer);
-      window.clearTimeout(revealTimer);
-      window.clearTimeout(completeTimer);
-    };
-  }, [introTitle]);
-
-  useEffect(() => {
-    if (visibleIntroCount >= introTitle.length) return undefined;
-    const letterTimer = window.setTimeout(() => {
-      setVisibleIntroCount((count) => count + 1);
-    }, INTRO_LETTER_DELAY_MS);
-    return () => window.clearTimeout(letterTimer);
-  }, [introTitle, visibleIntroCount]);
 
   /**
    * Switches between dark and light theme modes
@@ -203,16 +61,10 @@ export default function Home() {
   }
 
   return (
-    <main className={homeClassName}>
-      <HomeIntro
-        title={siteContent.hero.name}
-        isVisible={isIntroActive}
-        isMoving={isIntroMoving}
-        visibleCount={visibleIntroCount}
-      />
+    <main className="site-shell site-shell-visible">
       <div className="site-shell-content">
         <Navbar theme={theme} onToggleTheme={handleToggleTheme} />
-        <HeroSection hero={siteContent.hero} hideHeadline={isIntroActive} />
+        <HeroSection hero={siteContent.hero} />
         {sections.primary.map((section) => (
           <ExperienceSection key={section.id} section={section} />
         ))}

@@ -112,7 +112,7 @@ export const siteContent = {
     name: "Curious about perception, robotics, and applied AI",
     panelLabel: "Research Interests",
     summary:
-      "My research interests center on AI systems that perceive real-world environments, reason from visual information, and support reliable decision-making.",
+      "My research interests center on spatial intelligence and building AI systems that perceive, reason about, and interact with physical environments through computer vision, embodied AI, and world models.",
     detail:
       "I am especially interested in projects that combine computer vision, representation learning, and simulation, particularly in robotics, autonomous navigation, and AI-powered tools.",
     links: [
@@ -191,7 +191,6 @@ export const siteContent = {
       contextLines: [
         "Intelligent Systems Specialization",
         "GPA: 3.98/4.00",
-        "Magna Cum Laude, top 2-6% of cohort",
       ],
       highlightStyle: "labeled",
       highlights: [
@@ -229,7 +228,7 @@ export const siteContent = {
     {
       title: "Kasanare",
       subtitle: "Software Engineer Intern",
-      period: "Dec 2023 - Jan 2024",
+      period: "Aug 2023 - Dec 2023",
       summary:
         "Developed LLM powered chatbot features using retrievaland prompt design to improve response quality.",
       highlights: [
