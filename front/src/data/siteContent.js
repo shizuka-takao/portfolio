@@ -107,7 +107,7 @@ export const siteContent = {
     details: [
       "At UC Irvine, I conduct research in the Ding Lab under the guidance of Professor Fangyuan Ding, where I work on integrating deep learning models with GUI-based tools to support cell image segmentation and biomedical image analysis.",
       "My broader research interests are in perception-driven AI systems: systems that can understand visual environments, reason from sensory information, and support reliable decisions in real-world settings. I am especially interested in computer vision, representation learning, simulation, embodied AI, and world models.",
-      "More recently, I have been exploring research directions related to Professor Mengyu Wang’s AI and robotics projects, especially world models and embodied AI, as well as Professor Marco Levorato’s work on efficient, deployable AI systems, including vision-language models and edge-cloud deployment. These directions connect closely with my interest in building AI systems that bridge perception, decision-making, and practical deployment.",
+      "More recently, I have been exploring research directions related to Professor Marco Levorato’s work on efficient, deployable AI systems, including vision-language models and edge-cloud deployment. These directions connect closely with my interest in building AI systems that bridge perception, decision-making, and practical deployment.",
     ],
 
     imageAlt: "Shizuka Takao portrait",
@@ -118,16 +118,6 @@ export const siteContent = {
     ],
   },
   research: [
-    {
-      title: "Harvard AI and Robotics Lab",
-      subtitle: "Undergraduate Research Assistant",
-      period: "July 2026 - Present",
-      institution: "Harvard University",
-      advisor: "Advisor: Mengyu Wang",
-      summary:
-        "Early-stage research work exploring project directions in AI, robotics, embodied AI, and world models. Details will be updated as the project scope develops.",
-      tags: ["Embodied AI", "World Models", "Research"],
-    },
     {
       title: "Intelligent and Autonomous Systems Lab",
       subtitle: "Undergraduate Research Assistant",
