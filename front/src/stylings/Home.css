@@ -593,10 +593,6 @@ a {
   hyphens: none;
 }
 
-.section-title-wide {
-  max-width: 14ch;
-}
-
 .section-summary {
   max-width: 24rem;
 }

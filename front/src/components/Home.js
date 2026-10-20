@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
-import ProjectGrid from "./ProjectGrid";
 import EntryGrid from "./EntryGrid";
 import PageFooter from "./PageFooter";
 import { siteContent } from "../data/siteContent";
@@ -10,21 +9,14 @@ import "../stylings/Home.css";
 const DEFAULT_THEME = "dark";
 
 /**
- * Returns the experience sections shown above projects
+ * Returns the experience sections shown on the homepage
  */
 function getHomeSections() {
-  return {
-    primary: [
-      { id: "education", title: "Education", items: siteContent.education },
-      { id: "research", title: "Research", items: siteContent.research },
-      { id: "work", title: "Work", items: siteContent.workExperience },
-    ],
-    extracurricular: {
-      id: "activities",
-      title: "Extra curricular",
-      items: siteContent.extracurricular,
-    },
-  };
+  return [
+    { id: "education", title: "Education", items: siteContent.education },
+    { id: "research", title: "Research", items: siteContent.research },
+    { id: "work", title: "Work", items: siteContent.workExperience },
+  ];
 }
 
 /**
@@ -65,14 +57,9 @@ export default function Home() {
       <div className="site-shell-content">
         <Navbar theme={theme} onToggleTheme={handleToggleTheme} />
         <HeroSection hero={siteContent.hero} />
-        {sections.primary.map((section) => (
+        {sections.map((section) => (
           <ExperienceSection key={section.id} section={section} />
         ))}
-        <ProjectGrid
-          projects={siteContent.selectedProjects}
-          footerLink={siteContent.allProjectsLink}
-        />
-        <ExperienceSection section={sections.extracurricular} />
         <PageFooter footer={siteContent.footer} />
       </div>
     </main>

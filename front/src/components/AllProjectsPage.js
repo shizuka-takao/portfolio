@@ -16,8 +16,7 @@ function ArchiveIntro() {
         <p className="hero-kicker">Project Archive</p>
         <h1 className="archive-title">All Projects</h1>
         <p className="archive-summary">
-          A broader collection of software, machine learning, and exploratory builds beyond
-          the smaller set featured on the homepage.
+          A broader collection of software, machine learning, and exploratory builds.
         </p>
       </div>
     </SectionShell>

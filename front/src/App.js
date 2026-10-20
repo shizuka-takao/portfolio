@@ -35,7 +35,7 @@ function App() {
           <title>Shizuka Takao - Personal Website</title>
           <meta
             name="description"
-            content="Explore Shizuka Takao's portfolio featuring research, work experience, teaching, selected projects, and personal background."
+            content="Explore Shizuka Takao's portfolio featuring research, work experience, teaching, and personal background."
           />
         </Helmet>
         <AppRoutes />

@@ -1,26 +1,4 @@
 /**
- * Returns true when a project belongs in the homepage set
- */
-function isSelectedProject(project) {
-  const selectedTitles = [
-    "Minecraft World Models",
-    "ContextReply",
-    "Sokoban",
-    "Clothing Recommendation",
-    "Search Engine",
-    "Fabflix",
-  ];
-  return selectedTitles.includes(project.title);
-}
-
-/**
- * Returns the smaller set of projects shown on the homepage
- */
-function getSelectedProjects(projects) {
-  return projects.filter(isSelectedProject);
-}
-
-/**
  * Stores every project shown across the site
  */
 const allProjects = [
@@ -118,6 +96,7 @@ export const siteContent = {
     links: [
       { label: "GitHub", href: "https://github.com/shizuka-takao" },
       { label: "Resume", href: "/Resume_2026_Summer.pdf" },
+      { label: "Curriculum Vitae (Long)", href: "/Curriculum_Vitae_Long.pdf" },
     ],
   },
   aboutPage: {
@@ -135,6 +114,7 @@ export const siteContent = {
     links: [
       { label: "GitHub", href: "https://github.com/shizuka-takao" },
       { label: "Resume", href: "/Resume_2026_Summer.pdf" },
+      { label: "Curriculum Vitae (Long)", href: "/Curriculum_Vitae_Long.pdf" },
     ],
   },
   research: [
@@ -239,43 +219,7 @@ export const siteContent = {
     },
   ],
   teachingExperience: [],
-  selectedProjects: getSelectedProjects(allProjects),
   allProjects,
-  allProjectsLink: {
-    label: "View All Projects",
-    href: "/projects",
-    isExternal: false,
-  },
-  extracurricular: [
-    {
-      title: "Break Through Tech AI at Cornell Tech",
-      subtitle: "AI Fellow",
-      period: "May 2025 - Mar 2026",
-      summary:
-        "Selected for the Break Through Tech AI program and completed the Machine Learning Foundations course through Cornell University.",
-    },
-    {
-      title: "Women in Computer Science",
-      subtitle: "Secretary",
-      period: "Sep 2023 - May 2024",
-      summary:
-        "Maintained records for general, executive, and collaboration meetings while helping coordinate speaker events for a supportive community of women in computing.",
-    },
-    {
-      title: "Diablo Valley College",
-      subtitle: "Mathematics Tutor",
-      period: "Mar 2023 - Sep 2023",
-      summary:
-        "Facilitated tutoring sessions, guiding students through math concepts up to multivariable calculus.",
-    },
-    {
-      title: "Deep Learning Society",
-      subtitle: "ICC Representative",
-      period: "Jan 2023 - May 2023",
-      summary:
-        "Represented the club in funding meetings to support resource allocation.",
-    },
-  ],
   blogPage: {
     eyebrow: "Writing",
     title: "Blog",
@@ -342,6 +286,7 @@ export const siteContent = {
     links: [
       { label: "GitHub", href: "https://github.com/tkpp26" },
       { label: "Resume", href: "/Resume_2026_Summer.pdf" },
+      { label: "Curriculum Vitae (Long)", href: "/Curriculum_Vitae_Long.pdf" },
     ],
   },
 };
@@ -354,8 +299,7 @@ export const navigationItems = [
   { id: "education", label: "Education", href: "/#education" },
   { id: "research", label: "Research", href: "/#research" },
   { id: "work", label: "Work", href: "/#work" },
-  { id: "projects", label: "Projects", href: "/#projects" },
-  { id: "activities", label: "Extracurricular", href: "/#activities" },
+  { label: "Projects", href: "/projects" },
   { label: "Personal", href: "/personal" },
   { label: "About Me", href: "/about" },
 ];
